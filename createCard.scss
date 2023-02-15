@@ -52,11 +52,57 @@ body {
   }
 }
 
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  margin-bottom: 50px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 1920px;
+  margin: 0 10%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
+  align-items: center;
+}
+
+#textarea {
+  resize: vertical;
+  width: 400px;
+  padding: 5px 10px;
+  border: 0;
+  border-radius: 2px;
+  font-size: 1rem;
+  width: 400px;
+}
+
+.submit {
+  padding: 15px 20px;
+  font-size: 1rem;
+}
+
+.form input {
+  padding: 10px;
+  border: 0;
+  border-radius: 2px;
+  font-size: 1rem;
+  width: 400px;
+}
+
 .card-container {
   max-width: 320px;
   color: white;
   background-color: #1a1b21;
   border-radius: 10px 10px 0 0;
+  margin: auto;
 
   img {
     width: 100%;
