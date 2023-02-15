@@ -45,7 +45,6 @@ loginForm.addEventListener("submit", (e) => {
       // Signed in 
       const user = userCredential.user;
       // ...
-      console.log(user)
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -64,7 +63,6 @@ onAuthStateChanged(auth, (user) => {
     // User is signed in, see docs for a list of available properties
     // https://firebase.google.com/docs/reference/js/firebase.User
     const uid = user.uid;
-
     window.location.href = "createCard.html"
 
   } else {
