@@ -1,41 +1,12 @@
 import { app } from './app';
-
-
-
-import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
-
+import { logout } from './comps';
+import { redirectUserIfLoggedInOrNot } from './comps';
 import { getDatabase, ref, set } from "firebase/database"
 
-const auth = getAuth(app)
+redirectUserIfLoggedInOrNot("/index.html")
+logout()
+
 const dataBase = getDatabase(app)
-
-console.log(dataBase)
-
-
-onAuthStateChanged(auth, (user) => {
-    if (user) {
-        const uid = user.uid;
-    } else {
-        window.location.href = "index.html"
-        localStorage.clear()
-    }
-});
-
-
-
-
-const logOutButton = document.querySelector(".logout-btn")
-logOutButton.addEventListener("click", () => {
-    signOut(auth).then(() => {
-        // Sign-out successful.
-    }).catch((error) => {
-        // An error happened.
-    });
-
-})
-
-
-
 const name = document.getElementById("name")
 const title = document.getElementById("title")
 const portfolio = document.getElementById("portfolio")
@@ -48,14 +19,11 @@ const image = document.getElementById("image")
 const form = document.querySelector(".form")
 const UID = localStorage.getItem("UID")
 
-console.log(UID)
-
 form.addEventListener("submit", (e) => {
     e.preventDefault()
     writeUserData(UID, image.value, name.value, title.value, portfolio.value, email.value, linkedin.value, about.value, interests.value)
 
 })
-
 
 function writeUserData(userId, image, name, title, portfolio, email, linkedin, about, interests) {
     set(ref(dataBase, 'users/' + userId), {

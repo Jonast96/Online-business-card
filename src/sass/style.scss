@@ -1,0 +1,438 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  margin-bottom: 50px;
+}
+
+.logout-btn {
+  font-family: Hack, monospace;
+  background: #d3d3d3;
+  color: #2c2c2c;
+  cursor: pointer;
+  font-size: 1em;
+  padding: 10px 20px;
+  border: 0;
+  transition: all 0.2s;
+  border-radius: 10px;
+
+  &:hover {
+    background: #121268;
+    transition: all 0.2s;
+    border-radius: 10px;
+    box-shadow: 0px 6px 15px #0000ff61;
+    color: #ffffff;
+    &::after {
+      opacity: 1;
+      transition: all 0.2s;
+      color: #ffffff;
+    }
+  }
+}
+
+body {
+  min-height: 100vh;
+  max-width: 1920px;
+  font-family: sans-serif;
+  background: linear-gradient(#141e30, #243b55);
+}
+
+.card-container {
+  max-width: 320px;
+  color: white;
+  background-color: #1a1b21;
+  border-radius: 10px 10px 0 0;
+  margin: auto;
+
+  img {
+    width: 100%;
+    height: 250px;
+    border-radius: 10px 10px 0 0;
+    object-fit: cover;
+  }
+
+  h1 {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 10px;
+  }
+  h4 {
+    color: #f3bf99;
+    font-weight: 200;
+    text-align: center;
+  }
+
+  a {
+    font-size: 14px;
+    text-align: center;
+    font-weight: 200;
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+  }
+
+  a {
+    padding: 5px 15px;
+    border: 0;
+    border-radius: 2px;
+  }
+
+  .email {
+    background-color: white;
+    font-size: 14px;
+    color: #374151;
+  }
+
+  .linkedin {
+    background-color: #5093e2;
+    color: white;
+  }
+
+  .info {
+    padding: 0 20px;
+  }
+
+  .info h2 {
+    margin-top: 15px;
+    font-weight: 600;
+    font-size: 19px;
+  }
+
+  .info p {
+    font-size: 12px;
+    font-weight: 200;
+  }
+
+  footer {
+    display: flex;
+    justify-content: space-around;
+    background-color: #161619;
+    padding: 20px 40px;
+    margin-top: 24px;
+  }
+  footer img {
+    height: 25px;
+    width: 25px;
+    border-radius: 20px;
+  }
+}
+
+//CREATECARD
+.createCard {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 1920px;
+    margin: 0 10%;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+    align-items: center;
+  }
+
+  #textarea {
+    resize: vertical;
+    width: 400px;
+    padding: 5px 10px;
+    border: 0;
+    border-radius: 2px;
+    font-size: 1rem;
+    width: 400px;
+  }
+
+  .submit {
+    padding: 15px 20px;
+    font-size: 1rem;
+  }
+
+  .form input {
+    padding: 10px;
+    border: 0;
+    border-radius: 2px;
+    font-size: 1rem;
+    width: 400px;
+  }
+
+  .card-container {
+    max-width: 320px;
+    color: white;
+    background-color: #1a1b21;
+    border-radius: 10px 10px 0 0;
+    margin: auto;
+
+    img {
+      width: 100%;
+      height: 250px;
+      border-radius: 10px 10px 0 0;
+      object-fit: cover;
+    }
+
+    h1 {
+      font-size: 20px;
+      text-align: center;
+      margin-top: 10px;
+    }
+    h4 {
+      color: #f3bf99;
+      font-weight: 200;
+      text-align: center;
+    }
+
+    a {
+      font-size: 14px;
+      text-align: center;
+      font-weight: 200;
+      display: flex;
+      justify-content: center;
+      color: #ffffff;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    button {
+      padding: 5px 15px;
+      border: 0;
+      border-radius: 2px;
+    }
+
+    .email {
+      background-color: white;
+      font-size: 14px;
+      color: #374151;
+    }
+
+    .linkedin {
+      background-color: #5093e2;
+      color: white;
+    }
+
+    .info {
+      padding: 0 20px;
+    }
+
+    .info h2 {
+      margin-top: 15px;
+      font-weight: 600;
+      font-size: 19px;
+    }
+
+    .info p {
+      font-size: 12px;
+      font-weight: 200;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-around;
+      background-color: #161619;
+      padding: 20px 40px;
+      margin-top: 24px;
+    }
+    footer img {
+      height: 25px;
+      width: 25px;
+      border-radius: 20px;
+    }
+  }
+}
+
+// LOGIN BOX
+
+.login-box {
+  margin-bottom: 20px;
+  width: 400px;
+  padding: 40px;
+  background: rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+}
+
+.login-box h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+
+.login-box .user-box {
+  position: relative;
+}
+
+.login-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+.login-box .user-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #03e9f4;
+  font-size: 12px;
+}
+
+.login-box form button {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #03e9f4;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.5s;
+  margin-top: 40px;
+  letter-spacing: 4px;
+}
+
+.login-box button:hover {
+  background: #03e9f4;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4,
+    0 0 100px #03e9f4;
+}
+
+.login-box button span {
+  position: absolute;
+  display: block;
+}
+
+.login-box button span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #03e9f4);
+  animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%,
+  100% {
+    left: 100%;
+  }
+}
+
+.login-box button span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #03e9f4);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+  50%,
+  100% {
+    top: 100%;
+  }
+}
+
+.login-box button span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #03e9f4);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: 0.5s;
+}
+
+button {
+  border: none;
+  border-radius: 2px;
+  background-color: transparent;
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%,
+  100% {
+    right: 100%;
+  }
+}
+
+.login-box button span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #03e9f4);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,
+  100% {
+    bottom: 100%;
+  }
+}

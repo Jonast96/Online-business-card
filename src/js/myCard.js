@@ -1,33 +1,10 @@
 import { app } from './app';
 import { getDatabase, ref, child, get } from "firebase/database";
-import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
+import { logout } from './comps';
+import { redirectUserIfLoggedInOrNot } from './comps';
+redirectUserIfLoggedInOrNot("/index.html")
+logout()
 const dataBase = getDatabase(app)
-
-const auth = getAuth(app)
-
-
-onAuthStateChanged(auth, (user) => {
-    if (user) {
-        const uid = user.uid;
-    } else {
-        window.location.href = "index.html"
-        localStorage.clear()
-    }
-});
-
-
-
-
-const logOutButton = document.querySelector(".logout-btn")
-logOutButton.addEventListener("click", () => {
-    signOut(auth).then(() => {
-        // Sign-out successful.
-    }).catch((error) => {
-        // An error happened.
-    });
-
-})
-
 
 const name = document.getElementById("name")
 const title = document.getElementById("title")
@@ -35,14 +12,9 @@ const portfolio = document.getElementById("portfolio")
 const about = document.getElementById("about")
 const interests = document.getElementById("interests")
 const image = document.querySelector(".image")
-
 const email = document.querySelector(".email")
 const linkedin = document.querySelector(".linkedin")
-
 const UID = localStorage.getItem("UID")
-
-console.log(UID)
-
 
 
 const dbRef = ref(dataBase);
@@ -51,7 +23,6 @@ get(child(dbRef, `users/${UID}`)).then((snapshot) => {
         const user = snapshot.val()
         generateCard(user)
         console.log(user)
-
     } else {
         console.log("No data available");
     }

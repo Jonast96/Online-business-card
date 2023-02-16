@@ -1,10 +1,10 @@
-import './style.scss'
+import './src/sass/style.scss'
 
-import { app } from './app';
+import { app } from './src/js/app';
 
 
 
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, sendSignInLinkToEmail } from "firebase/auth";
 const auth = getAuth(app)
 
 
@@ -28,6 +28,8 @@ registerForm.addEventListener("submit", (e) => {
       //handle errors here
 
     });
+
+
 
 })
 
@@ -63,13 +65,12 @@ onAuthStateChanged(auth, (user) => {
     // User is signed in, see docs for a list of available properties
     // https://firebase.google.com/docs/reference/js/firebase.User
     const uid = user.uid;
-    window.location.href = "createCard.html"
+    window.location.href = "src/views/createcard.html"
     localStorage.setItem("UID", uid)
 
   } else {
 
   }
 });
-
 
 
