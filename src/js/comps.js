@@ -22,7 +22,7 @@ export function redirectUserIfLoggedInOrNot(location) {
         if (user) {
             const uid = user.uid;
         } else {
-            document.location.href = location
+            window.location.href = location
             localStorage.clear()
         }
     });
