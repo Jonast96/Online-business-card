@@ -27,34 +27,27 @@ nav {
 
 .logout-btn {
   font-family: Hack, monospace;
-  background: #d3d3d3;
-  color: #2c2c2c;
+  background: #721d1d;
   cursor: pointer;
   font-size: 1em;
-  padding: 10px 20px;
+  padding: 5px 15px;
   border: 0;
   transition: all 0.2s;
   border-radius: 10px;
-
+  color: #ffffff;
   &:hover {
-    background: #121268;
+    background: #6d2b2b;
     transition: all 0.2s;
-    border-radius: 10px;
-    box-shadow: 0px 6px 15px #0000ff61;
-    color: #ffffff;
-    &::after {
-      opacity: 1;
-      transition: all 0.2s;
-      color: #ffffff;
-    }
   }
 }
-
-body {
-  min-height: 100vh;
-  max-width: 1920px;
-  font-family: sans-serif;
+html {
   background: linear-gradient(#141e30, #243b55);
+}
+body {
+  margin: 0 auto;
+  max-width: 1920px;
+  min-height: 100vh;
+  font-family: sans-serif;
 }
 
 .card-container {
@@ -163,12 +156,12 @@ body {
 
   #textarea {
     resize: vertical;
-    width: 400px;
     padding: 5px 10px;
     border: 0;
     border-radius: 2px;
     font-size: 1rem;
-    width: 400px;
+    max-width: 400px;
+    width: 100%;
   }
 
   .submit {
@@ -181,7 +174,8 @@ body {
     border: 0;
     border-radius: 2px;
     font-size: 1rem;
-    width: 400px;
+    max-width: 400px;
+    width: 100%;
   }
 
   .card-container {
@@ -270,169 +264,213 @@ body {
       border-radius: 20px;
     }
   }
+  h1 {
+    text-align: center;
+  }
+
+  @media screen and (max-width: 768px) {
+    .container {
+      grid-template-columns: 1fr;
+      gap: 50px;
+    }
+    .card-container {
+      order: -1;
+    }
+  }
 }
 
 // LOGIN BOX
+.index {
+  display: flex;
+  align-items: center;
 
-.login-box {
-  margin-bottom: 20px;
-  width: 400px;
-  padding: 40px;
-  background: rgba(0, 0, 0, 0.5);
-  box-sizing: border-box;
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
-  border-radius: 10px;
-}
+  .register {
+    display: none;
+  }
 
-.login-box h2 {
-  margin: 0 0 30px;
-  padding: 0;
-  color: #fff;
-  text-align: center;
-}
+  .login-box {
+    margin-bottom: 20px;
+    width: 400px;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+  }
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+  }
 
-.login-box .user-box {
-  position: relative;
-}
+  .login-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+  }
 
-.login-box .user-box input {
-  width: 100%;
-  padding: 10px 0;
-  font-size: 16px;
-  color: #fff;
-  margin-bottom: 30px;
-  border: none;
-  border-bottom: 1px solid #fff;
-  outline: none;
-  background: transparent;
-}
-.login-box .user-box label {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 10px 0;
-  font-size: 16px;
-  color: #fff;
-  pointer-events: none;
-  transition: 0.5s;
-}
+  .login-box .user-box {
+    position: relative;
+  }
 
-.login-box .user-box input:focus ~ label,
-.login-box .user-box input:valid ~ label {
-  top: -20px;
-  left: 0;
-  color: #03e9f4;
-  font-size: 12px;
-}
+  .login-box .user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+  }
+  .login-box .user-box label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: 0.5s;
+  }
 
-.login-box form button {
-  position: relative;
-  display: inline-block;
-  padding: 10px 20px;
-  color: #03e9f4;
-  font-size: 16px;
-  text-decoration: none;
-  text-transform: uppercase;
-  overflow: hidden;
-  transition: 0.5s;
-  margin-top: 40px;
-  letter-spacing: 4px;
-}
+  .login-box .user-box input:focus ~ label,
+  .login-box .user-box input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #03e9f4;
+    font-size: 12px;
+  }
 
-.login-box button:hover {
-  background: #03e9f4;
-  color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4,
-    0 0 100px #03e9f4;
-}
+  .login-box form button {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #03e9f4;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: 0.5s;
+    margin-top: 40px;
+    letter-spacing: 4px;
+  }
 
-.login-box button span {
-  position: absolute;
-  display: block;
-}
+  .login-box form .registerBtn {
+    color: #ff00ea;
+  }
 
-.login-box button span:nth-child(1) {
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #03e9f4);
-  animation: btn-anim1 1s linear infinite;
-}
+  .login-box button:hover {
+    background: #03e9f4;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4,
+      0 0 100px #03e9f4;
+  }
 
-@keyframes btn-anim1 {
-  0% {
+  .login-box .registerBtn:hover {
+    background: #ff00ea;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #ff00ea, 0 0 25px #ff00ea, 0 0 50px #ff00ea,
+      0 0 100px #ff00ea;
+  }
+
+  .login-box button span {
+    position: absolute;
+    display: block;
+  }
+
+  .login-box button span:nth-child(1) {
+    top: 0;
     left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #03a7af);
+    animation: btn-anim1 2s linear infinite;
   }
-  50%,
-  100% {
-    left: 100%;
+
+  .login-box .registerBtn span:nth-child(1),
+  .login-box .registerBtn span:nth-child(2),
+  .login-box .registerBtn span:nth-child(3),
+  .login-box .registerBtn span:nth-child(4) {
+    background: linear-gradient(90deg, transparent, #ff00ea);
   }
-}
 
-.login-box button span:nth-child(2) {
-  top: -100%;
-  right: 0;
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(180deg, transparent, #03e9f4);
-  animation: btn-anim2 1s linear infinite;
-  animation-delay: 0.25s;
-}
+  @keyframes btn-anim1 {
+    0% {
+      left: -100%;
+    }
+    50%,
+    100% {
+      left: 100%;
+    }
+  }
 
-@keyframes btn-anim2 {
-  0% {
+  .login-box button span:nth-child(2) {
     top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #03a7af);
+    animation: btn-anim2 2s linear infinite;
+    animation-delay: 0.25s;
   }
-  50%,
-  100% {
-    top: 100%;
+
+  @keyframes btn-anim2 {
+    0% {
+      top: -100%;
+    }
+    50%,
+    100% {
+      top: 100%;
+    }
   }
-}
 
-.login-box button span:nth-child(3) {
-  bottom: 0;
-  right: -100%;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(270deg, transparent, #03e9f4);
-  animation: btn-anim3 1s linear infinite;
-  animation-delay: 0.5s;
-}
-
-button {
-  border: none;
-  border-radius: 2px;
-  background-color: transparent;
-}
-
-@keyframes btn-anim3 {
-  0% {
+  .login-box button span:nth-child(3) {
+    bottom: 0;
     right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #026469);
+    animation: btn-anim3 2s linear infinite;
+    animation-delay: 0.5s;
   }
-  50%,
-  100% {
-    right: 100%;
+
+  button {
+    border: none;
+    border-radius: 2px;
+    background-color: transparent;
   }
-}
 
-.login-box button span:nth-child(4) {
-  bottom: -100%;
-  left: 0;
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(360deg, transparent, #03e9f4);
-  animation: btn-anim4 1s linear infinite;
-  animation-delay: 0.75s;
-}
+  @keyframes btn-anim3 {
+    0% {
+      right: -100%;
+    }
+    50%,
+    100% {
+      right: 100%;
+    }
+  }
 
-@keyframes btn-anim4 {
-  0% {
+  .login-box button span:nth-child(4) {
     bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #003235);
+    animation: btn-anim4 2s linear infinite;
+    animation-delay: 0.75s;
   }
-  50%,
-  100% {
-    bottom: 100%;
+
+  @keyframes btn-anim4 {
+    0% {
+      bottom: -100%;
+    }
+    50%,
+    100% {
+      bottom: 100%;
+    }
   }
 }

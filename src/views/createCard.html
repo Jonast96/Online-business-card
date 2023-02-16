@@ -18,14 +18,21 @@
       </nav>
       <div class="container">
         <div class="form-div">
+          <h1>Create your card</h1>
           <form class="form" action="submit">
-            <input id="image" type="text" placeholder="Image URL" />
-            <input id="name" type="text" placeholder="Name" />
-            <input id="title" type="text" placeholder="Occupation/Title" />
+            <input required id="image" type="text" placeholder="Image URL" />
+            <input required id="name" type="text" placeholder="Name" />
+            <input
+              required
+              id="title"
+              type="text"
+              placeholder="Occupation/Title"
+            />
             <input id="portfolio" type="text" placeholder="Portfolio" />
-            <input id="email" type="text" placeholder="Email" />
+            <input required id="email" type="text" placeholder="Email" />
             <input id="linkedin" type="text" placeholder="Linkedin" />
             <textarea
+              required
               maxlength="225"
               placeholder="About"
               name=""
@@ -34,6 +41,7 @@
               class="about"
             ></textarea>
             <textarea
+              required
               maxlength="225"
               placeholder="Interests"
               name=""

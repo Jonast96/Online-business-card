@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BusinessCard</title>
   </head>
-  <body>
+  <body class="index">
     <div id="app">
-      <div class="login-box">
+      <div class="login-box register">
         <h2>Register</h2>
         <form id="register-form">
           <div class="user-box">
@@ -29,7 +29,7 @@
         </form>
       </div>
 
-      <div class="login-box">
+      <div class="login-box login">
         <h2>Login</h2>
         <form id="login-form">
           <div class="user-box">
@@ -40,13 +40,23 @@
             <input id="login-password" type="password" name="" required="" />
             <label>Password</label>
           </div>
-          <button>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            Submit
-          </button>
+
+          <div class="button-container">
+            <button>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              Submit
+            </button>
+            <button class="registerBtn">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              Register
+            </button>
+          </div>
         </form>
       </div>
     </div>
