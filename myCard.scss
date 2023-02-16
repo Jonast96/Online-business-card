@@ -26,14 +26,6 @@ nav {
   margin-bottom: 50px;
 }
 
-body {
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  background: linear-gradient(#141e30, #243b55);
-}
-
 .logout-btn {
   font-family: Hack, monospace;
   background: #d3d3d3;
@@ -59,42 +51,8 @@ body {
   }
 }
 
-.container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+body {
   max-width: 1920px;
-  margin: 0 10%;
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  height: 100%;
-  align-items: center;
-}
-
-#textarea {
-  resize: vertical;
-  width: 400px;
-  padding: 5px 10px;
-  border: 0;
-  border-radius: 2px;
-  font-size: 1rem;
-  width: 400px;
-}
-
-.submit {
-  padding: 15px 20px;
-  font-size: 1rem;
-}
-
-.form input {
-  padding: 10px;
-  border: 0;
-  border-radius: 2px;
-  font-size: 1rem;
-  width: 400px;
 }
 
 .card-container {
@@ -138,7 +96,7 @@ body {
     margin-top: 10px;
   }
 
-  button {
+  a {
     padding: 5px 15px;
     border: 0;
     border-radius: 2px;

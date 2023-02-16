@@ -64,6 +64,7 @@ onAuthStateChanged(auth, (user) => {
     // https://firebase.google.com/docs/reference/js/firebase.User
     const uid = user.uid;
     window.location.href = "createCard.html"
+    localStorage.setItem("UID", uid)
 
   } else {
 
@@ -72,13 +73,3 @@ onAuthStateChanged(auth, (user) => {
 
 
 
-
-const logOutButton = document.querySelector(".logout-btn")
-logOutButton.addEventListener("click", () => {
-  signOut(auth).then(() => {
-    // Sign-out successful.
-  }).catch((error) => {
-    // An error happened.
-  });
-
-})

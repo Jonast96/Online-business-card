@@ -11,11 +11,15 @@
     <div id="app">
       <nav>
         <h1>Business card generator</h1>
-        <button class="logout-btn">Sign out</button>
+        <div>
+          <button class="logout-btn">Sign out</button>
+          <a href="myCard.html">My card</a>
+        </div>
       </nav>
       <div class="container">
         <div class="form-div">
           <form class="form" action="submit">
+            <input id="image" type="text" placeholder="Image URL" />
             <input id="name" type="text" placeholder="Name" />
             <input id="title" type="text" placeholder="Occupation/Title" />
             <input id="portfolio" type="text" placeholder="Portfolio" />
