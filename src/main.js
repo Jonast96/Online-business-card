@@ -1,7 +1,5 @@
-import './src/sass/style.scss'
-
-import { app } from './src/js/app';
-
+import './sass/style.scss'
+import { app } from './js/app';
 
 
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, sendSignInLinkToEmail } from "firebase/auth";
@@ -65,7 +63,7 @@ onAuthStateChanged(auth, (user) => {
     // User is signed in, see docs for a list of available properties
     // https://firebase.google.com/docs/reference/js/firebase.User
     const uid = user.uid;
-    window.location.href = "/createcard.html"
+    window.location.href = "/src/createcard/index.html"
     localStorage.setItem("UID", uid)
 
   } else {

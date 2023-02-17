@@ -1,9 +1,9 @@
-import { app } from './app';
-import { logout } from './comps';
-import { redirectUserIfLoggedInOrNot } from './comps';
+import { app } from '../js/app';
+import { logout } from '../js/comps';
+import { redirectUserIfLoggedInOrNot } from '../js/comps';
 import { getDatabase, ref, set } from "firebase/database"
 
-redirectUserIfLoggedInOrNot("/index.html")
+redirectUserIfLoggedInOrNot("/src/index.html")
 logout()
 
 const dataBase = getDatabase(app)
