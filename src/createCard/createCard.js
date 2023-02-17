@@ -3,7 +3,7 @@ import { logout } from '../js/comps';
 import { redirectUserIfLoggedInOrNot } from '../js/comps';
 import { getDatabase, ref, set } from "firebase/database"
 
-redirectUserIfLoggedInOrNot("/src/index.html")
+redirectUserIfLoggedInOrNot("/index.html")
 logout()
 
 const dataBase = getDatabase(app)
