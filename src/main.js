@@ -67,3 +67,14 @@ onAuthStateChanged(auth, (user) => {
 
   }
 });
+
+
+const register = document.querySelector(".register")
+const registerBtn = document.querySelector(".registerBtn")
+
+const login = document.querySelector(".login")
+
+registerBtn.addEventListener("click", () => {
+  register.classList.replace("none", "block")
+  login.classList.add("none")
+})
