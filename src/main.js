@@ -56,19 +56,14 @@ loginForm.addEventListener("submit", (e) => {
 })
 
 
-
-
 onAuthStateChanged(auth, (user) => {
   if (user) {
     // User is signed in, see docs for a list of available properties
     // https://firebase.google.com/docs/reference/js/firebase.User
     const uid = user.uid;
-    window.location.href = "/createcard/index.html"
+    window.location.href = "/createCard/index.html"
     localStorage.setItem("UID", uid)
-
   } else {
 
   }
 });
-
-
