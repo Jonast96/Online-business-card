@@ -4,6 +4,8 @@ import { app } from './js/app';
 
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, sendSignInLinkToEmail } from "firebase/auth";
 const auth = getAuth(app)
+const registerError = document.querySelector(".registerErrorMessage")
+const loginError = document.querySelector(".loginErrorMessage")
 
 
 
@@ -12,6 +14,7 @@ registerForm.addEventListener("submit", (e) => {
   e.preventDefault()
   const registerUserName = document.getElementById("register-username").value
   const registerPassword = document.getElementById("register-password").value
+
   createUserWithEmailAndPassword(auth, registerUserName, registerPassword)
     .then((userCredential) => {
       // Signed in 
@@ -23,7 +26,7 @@ registerForm.addEventListener("submit", (e) => {
       const errorCode = error.code;
       const errorMessage = error.message;
 
-      //handle errors here
+      registerError.innerHTML = errorCode
 
     });
 
@@ -34,6 +37,7 @@ registerForm.addEventListener("submit", (e) => {
 const loginForm = document.getElementById("login-form")
 
 loginForm.addEventListener("submit", (e) => {
+
 
   e.preventDefault()
   const loginEmail = document.getElementById("login-username").value
@@ -49,8 +53,10 @@ loginForm.addEventListener("submit", (e) => {
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      console.log(errorCode)
-      console.log(errorMessage)
+
+      loginError.innerHTML = errorCode
+
+
     });
 
 })

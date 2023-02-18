@@ -38,7 +38,7 @@ function generateCard(user) {
     portfolio.innerHTML = user.portfolio
     about.innerHTML = user.about;
     interests.innerHTML = user.interests;
-    linkedin.setAttribute("href", user.linkedin)
+    linkedin.setAttribute("href", user.linkedin === "" ? "https://www.linkedin.com/" : user.linkedin)
     email.setAttribute('href', `mailto:${user.email}`)
     image.setAttribute('src', user.image)
     console.log(user.image)

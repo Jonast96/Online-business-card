@@ -21,21 +21,26 @@ const UID = localStorage.getItem("UID")
 
 form.addEventListener("submit", (e) => {
     e.preventDefault()
-    writeUserData(UID, image.value, name.value, title.value, portfolio.value, email.value, linkedin.value, about.value, interests.value)
+    const userInfo = {
+        image: image.value,
+        name: name.value,
+        title: title.value,
+        portfolio: portfolio.value,
+        email: email.value,
+        linkedin: linkedin.value,
+        about: about.value,
+        interests: interests.value
+    };
+    try {
+        writeUserData(userInfo)
+        document.location.href = "../myCard/index.html"
+    } catch (error) {
+        console.log(error)
+    }
 
 })
 
-function writeUserData(userId, image, name, title, portfolio, email, linkedin, about, interests) {
-    set(ref(dataBase, 'users/' + userId), {
-        image: image,
-        name: name,
-        title: title,
-        portfolio: portfolio,
-        email: email,
-        linkedin: linkedin,
-        about: about,
-        interests: interests
-    });
+function writeUserData(userInfo) {
+    console.log(userInfo)
+    set(ref(dataBase, 'users/' + UID), userInfo);
 }
-
-
